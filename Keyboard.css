@@ -1,0 +1,41 @@
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: gray;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.default {
+    background-color: gray;
+}
+
+.pressed {
+    background-color: blue;
+}
+
+.released {
+    background-color: green;
+}
+
+.timer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#repeat-btn {
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
