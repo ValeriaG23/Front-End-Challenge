@@ -1,0 +1,109 @@
+<div class="keyboard">
+    <div class="row">
+        <button class="key default" style = width:40px;>~<br/><span>`</span></button>
+    <button class="key default">1<br/><span>!</span></button>
+    <button class="key default">2<br/><span>@</span></button>
+    <button class="key default">3<br/><span>#</span></button>
+    <button class="key default">4<br/><span>$</span></button>
+    <button class="key default">5<br/><span>%</span></button>
+    <button class="key default">6<br/><span>^</span></button>
+    <button class="key default">7<br/><span>&;</span></button>
+    <button class="key default">8<br/><span>*</span></button>
+    <button class="key default">9<br/><span>(</span></button>
+    <button class="key default">0<br/><span>)</span></button>
+        <button class="key default"  >
+            <i class = "material-icons">keyboard_backspace</i>
+        </button>
+    </div>
+</div>
+<div class="keyboard">
+    <div class="row">
+        <br>
+        <button class="key default " style = width:70px;>
+            <i class = "material-icons">keyboard_tab</i>
+        </button>
+        <button class="key default" >Q</button>
+        <button class="key default">W</button>
+        <button class="key default">E</button>
+        <button class="key default">R</button>
+        <button class="key default">T</button>
+        <button class="key default">Y</button>
+        <button class="key default">U</button>
+        <button class="key default">I</button>
+        <button class="key default">O</button>
+        <button class="key default">P</button>
+        <button class="key default">\</button>
+    </div>
+</div>
+<div class="keyboard">
+    <div class="row">
+            <button class="key default " style = width:100px;>
+                <i class = "material-icons">keyboard_capslock</i>
+            </button>
+        <button class="key default">A</button>
+        <button class="key default">S</button>
+        <button class="key default">D</button>
+        <button class="key default">F</button>
+        <button class="key default">G</button>
+        <button class="key default">H</button>
+        <button class="key default">J</button>
+        <button class="key default">K</button>
+        <button class="key default">L</button>
+        <button class="key default">;</button>
+        <button class="key default " style = width:100px;>
+            <i class = "material-icons">keyboard_return</i>
+        </button>
+    </div>
+</div>
+
+<div class="keyboard">
+    <div class="row">
+        <button class="key default " style = width:120px;>
+            <i class = "material-icons">keyboard_arrow_up</i>
+        </button>
+        <button class="key default">Z</button>
+        <button class="key default">X</button>
+        <button class="key default">C</button>
+        <button class="key default">V</button>
+        <button class="key default">B</button>
+        <button class="key default">N</button>
+        <button class="key default">M</button>
+        <button class="key default">,</button>
+        <button class="key default">.</button>
+        <button class="key default">/</button>
+        <button class="key default " style = width:120px;>
+            <i class = "material-icons">keyboard_arrow_up</i>
+        </button>
+    </div>
+</div>
+
+<div class="keyboard">
+    <div class="row">
+        <button class="key default" style = width:400px;>
+            <i class = "material-icons">space_bar</i>
+        </button></div>
+</div> 
+
+
+
+CSS
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: gray;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+ 
