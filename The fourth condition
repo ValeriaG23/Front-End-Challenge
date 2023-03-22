@@ -1,0 +1,25 @@
+HTML :
+<div class="timer">Time remaining: <span id="countdown">60</span>s</div>
+
+CSS:
+.timer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+JS:
+const countdownEl = document.getElementById('countdown');
+let countdown = 60;
+
+function startCountdown() {
+    const countdownId = setInterval(() => {
+        countdown--;
+        countdownEl.textContent = countdown;
+        if (countdown <= 0) {
+            clearInterval(countdownId);
+            resetPressedKeys();
+        }
+    }, 1000);
+}
+
+startCountdown();
