@@ -1,1 +1,63 @@
+HTML:
+<button id="repeat-btn" style = width:100px;text-align:center;background-color:#8c9694;padding:15px 32px;  >Repeat</button>
+
+CSS:
+#repeat-btn {
+    margin-top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+JS:
+const repeatBtn = document.getElementById('repeat-btn');
+let timeoutIds = new Set();
+
+function resetPressedKeys() {
+    pressedKeys.forEach(key => {
+        key.classList.remove('pressed', 'released');
+        key.classList.add('default');
+    });
+    pressedKeys.clear();
+                                                  timeoutIds.forEach(id => clearTimeout(id));
+                                                  timeoutIds.clear();
+}
+
+function simulateKeyPress(key) {
+    key.classList.add('pressed');
+                                                   timeoutIds.add(setTimeout(() => {
+        key.classList.remove('pressed');
+        key.classList.add('released');
+                                                    timeoutIds.add(setTimeout(() => {
+            key.classList.remove('released');
+            key.classList.add('default');
+        }, 300));
+    }, 3000));
+}
+
+keys.forEach(key => {
+    key.addEventListener('mousedown', () => {
+        key.classList.remove('default');
+        key.classList.add('pressed');
+        pressedKeys.add(key);
+                                                       timeoutIds.add(setTimeout(() => {
+            key.classList.remove('pressed');
+            key.classList.add('released');
+                                                       timeoutIds.add(setTimeout(() => {
+                key.classList.remove('released');
+                key.classList.add('default');
+                pressedKeys.delete(key);
+            }, 300));
+        }, 3000));
+    });
+});
+
+
+repeatBtn.addEventListener('click', () => {
+    resetPressedKeys();
+    keys.forEach(key => {
+        setTimeout(() => {
+            simulateKeyPress(key);
+        }, 200);
+    });
+});
 
