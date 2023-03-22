@@ -1,0 +1,52 @@
+CSS:
+
+.default {
+    background-color: gray;
+}
+
+.pressed {
+    background-color: blue;
+}
+
+.released {
+    background-color: green;
+}
+
+JS:
+const keys = document.querySelectorAll('.key');
+let pressedKeys = new Set();
+function resetPressedKeys() {
+    pressedKeys.forEach(key => {
+        key.classList.remove('pressed', 'released');
+        key.classList.add('default');
+    });
+    pressedKeys.clear();
+    
+function simulateKeyPress(key) {
+    key.classList.add('pressed');
+    timeoutIds.add(setTimeout(() => {
+        key.classList.remove('pressed');
+        key.classList.add('released');
+        timeoutIds.add(setTimeout(() => {
+            key.classList.remove('released');
+            key.classList.add('default');
+        }, 300));
+    }, 3000)); 
+}
+
+keys.forEach(key => {
+    key.addEventListener('mousedown', () => {
+        key.classList.remove('default');
+        key.classList.add('pressed');
+        pressedKeys.add(key);
+        timeoutIds.add(setTimeout(() => {
+            key.classList.remove('pressed');
+            key.classList.add('released');
+            timeoutIds.add(setTimeout(() => {
+                key.classList.remove('released');
+                key.classList.add('default');
+                pressedKeys.delete(key);
+            }, 300));
+        }, 3000));
+    });
+});
